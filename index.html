@@ -7,55 +7,87 @@
 
 <style>
 body {
-    font-family: Arial;
     margin: 0;
-    background: #f4f4f4;
+    font-family: Arial;
 }
 
-header {
-    background: #0a192f;
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center/cover;
     color: white;
-    padding: 30px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.5);
 }
 
+/* NAVBAR */
 nav {
-    background: #172a45;
-    padding: 10px;
-    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
     color: white;
-    margin: 10px;
+    margin: 0 15px;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 10px;
+/* TEXT HERO */
+.hero h1 {
+    font-size: 50px;
+    margin: 0;
 }
 
-section {
+.hero p {
+    max-width: 500px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00c896;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* CARD SECTION */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+.card {
     background: white;
     padding: 20px;
-    margin: 10px 0;
     border-radius: 10px;
-}
-
-footer {
-    background: #0a192f;
-    color: white;
+    width: 250px;
     text-align: center;
-    padding: 10px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 5px 0;
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: column;
     }
 }
 </style>
@@ -63,43 +95,35 @@ footer {
 
 <body>
 
-<header>
-    <h1>Ahmad Ivanov Rafly</h1>
-    <p>Mahasiswa Teknologi Rekayasa Konstruksi Bangunan Air</p>
-</header>
-
 <nav>
+    <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
-
-<section id="about">
-    <h2>Tentang Saya</h2>
-    <p>Saya mahasiswa yang memiliki minat dalam bidang teknik pantai, pemodelan gelombang, dan analisis sumber daya air.</p>
-</section>
-
-<section id="portfolio">
-    <h2>Portofolio</h2>
-    <ul>
-        <li>Modeling gelombang menggunakan MIKE 21</li>
-        <li>Analisis pasang surut metode Admiralty</li>
-        <li>Pemetaan bathymetry dengan ArcGIS</li>
-    </ul>
-</section>
-
-<section id="contact">
-    <h2>Kontak</h2>
-    <p>Email: emailkamu@gmail.com</p>
-</section>
-
+<div class="hero">
+    <h1>Ahmad Ivanov Rafly</h1>
+    <p>Mahasiswa Teknologi Rekayasa Konstruksi Bangunan Air dengan minat di bidang teknik pantai dan pemodelan.</p>
+    <button class="btn">Lihat Portofolio</button>
 </div>
 
-<footer>
-    <p>© 2026 Ivanov</p>
-</footer>
+<div class="cards">
+    <div class="card">
+        <h3>Modeling</h3>
+        <p>MIKE 21 & simulasi gelombang</p>
+    </div>
+
+    <div class="card">
+        <h3>GIS</h3>
+        <p>Pemetaan bathymetry dengan ArcGIS</p>
+    </div>
+
+    <div class="card">
+        <h3>Analisis</h3>
+        <p>Pasang surut metode Admiralty</p>
+    </div>
+</div>
 
 </body>
 </html>
