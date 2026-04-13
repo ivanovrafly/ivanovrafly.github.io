@@ -43,7 +43,6 @@ nav {
     display: flex;
     justify-content: flex-end;
     gap: 40px;
-}
     z-index: 10;
 }
 
@@ -86,6 +85,7 @@ nav a:hover {
 
 /* HERO */
 .hero {
+    position: relative;   /* TAMBAHKAN INI */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -131,17 +131,10 @@ nav a:hover {
 }
 
 /* SAAT DIHOVER */
-.btn:hover {
-    background: #00c896;   /* jadi hijau */
-    color: white;          /* teks jadi putih */
-}
+
 .btn:hover {
     background: #00c896;
     color: white;
-    transform: translateY(-2px);
-}
-.btn:hover {
-    background: #00a87a;
     transform: scale(1.05);
     transition: 0.3s;
 }
@@ -183,8 +176,6 @@ nav a:hover {
 
 <!-- HERO -->
 <div class="hero">
-   <!-- HERO -->
-<div class="hero">
     <div class="hero-text">
         <h1>Ivanov Rafly<br>Master of Engineering</h1>
 
@@ -199,7 +190,6 @@ nav a:hover {
     </div>
 </div>
 
-<!-- ABOUT -->
 <!-- ABOUT -->
 <section id="about" style="padding:80px 20px; background:#f4f4f4; text-align:center;">
     
