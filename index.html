@@ -23,10 +23,11 @@ nav {
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 20px;
+    padding: 20px 60px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 40px;
+}
     z-index: 10;
 }
 
@@ -34,6 +35,13 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* INI BONUSNYA */
+nav a:hover {
+    color: #00c896;
+    transition: 0.3s;
+}
 }
 
 /* DROPDOWN */
@@ -156,7 +164,9 @@ nav a {
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
-        <button class="btn">Get Started</button>
+        <a href="#about">
+    <button class="btn">About Me</button>
+</a>
     </div>
 </div>
 
