@@ -17,36 +17,67 @@ nav {
     top: 0;
     width: 100%;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 10;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    top: 30px;
+    min-width: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center/cover;
-    color: white;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center/cover;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    padding: 80px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
     background-blend-mode: darken;
 }
 
-.hero h1 {
+/* TEXT KIRI */
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
     font-size: 50px;
     margin: 0;
 }
 
-.hero p {
-    max-width: 500px;
+.hero-text p {
+    margin-top: 20px;
 }
 
 /* BUTTON */
@@ -57,92 +88,27 @@ nav a {
     border: none;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* CARDS */
-.cards {
-    display: flex;
-    gap: 20px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #f4f4f4;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    text-align: center;
-}
-
-/* PORTFOLIO GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 10px;
-}
-
-.grid img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-/* STATS */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-/* PROJECT */
-.project-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.project {
-    background: white;
-    width: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.project img {
-    width: 100%;
-}
-
-.project div {
-    padding: 15px;
-}
-
-/* SECTION */
-.section {
-    padding: 40px 20px;
-}
-
-/* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.btn:hover {
+    background: #00a87a;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 /* RESPONSIVE */
 @media (max-width:600px){
-    .hero h1 {
+    .hero {
+        padding: 20px;
+    }
+
+    .hero-text h1 {
         font-size: 30px;
+    }
+
+    nav {
+        flex-direction: column;
     }
 }
 </style>
@@ -150,110 +116,33 @@ footer {
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <a href="#">Home</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+
+    <div class="dropdown">
+        <a href="#">More ▾</a>
+        <div class="dropdown-content">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#">CV</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-    <h1>Ahmad Ivanov Rafly</h1>
-    <p>Mahasiswa Teknologi Rekayasa Konstruksi Bangunan Air dengan minat di bidang teknik pantai dan pemodelan.</p>
-    <button class="btn">Lihat Portofolio</button>
-</div>
+    <div class="hero-text">
+        <h1>The Future<br>of Engineering</h1>
 
-<!-- SKILL -->
-<div class="cards">
-    <div class="card">
-        <h3>Modeling</h3>
-        <p>MIKE 21 & simulasi gelombang</p>
-    </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
 
-    <div class="card">
-        <h3>GIS</h3>
-        <p>Pemetaan bathymetry dengan ArcGIS</p>
-    </div>
-
-    <div class="card">
-        <h3>Analisis</h3>
-        <p>Pasang surut metode Admiralty</p>
+        <button class="btn">Get Started</button>
     </div>
 </div>
-
-<!-- PORTFOLIO -->
-<div style="background:#111; color:white;" class="section">
-    <div class="container">
-        <h2 style="text-align:center;">Portfolio</h2>
-
-        <div class="grid">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        </div>
-    </div>
-</div>
-
-<!-- STATS -->
-<div style="background:#000; color:white;" class="section">
-    <div class="container stats">
-        <div>
-            <h2>10+</h2>
-            <p>Project</p>
-        </div>
-        <div>
-            <h2>3+</h2>
-            <p>Software</p>
-        </div>
-        <div>
-            <h2>5+</h2>
-            <p>Analisis</p>
-        </div>
-        <div>
-            <h2>100%</h2>
-            <p>Komitmen</p>
-        </div>
-    </div>
-</div>
-
-<!-- PROJECT -->
-<div class="section" style="background:#f4f4f4;">
-    <div class="container">
-        <h2 style="text-align:center;">Project Saya</h2>
-
-        <div class="project-container">
-
-            <div class="project">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-                <div>
-                    <h3>Modeling Gelombang</h3>
-                    <p>Menggunakan MIKE 21 untuk simulasi.</p>
-                </div>
-            </div>
-
-            <div class="project">
-                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-                <div>
-                    <h3>Analisis Pasut</h3>
-                    <p>Menggunakan metode Admiralty.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-    <div class="container">
-        <h2>Kontak</h2>
-        <p>Email: emailkamu@gmail.com</p>
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 Ivanov</p>
-</footer>
 
 </body>
 </html>
