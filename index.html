@@ -6,8 +6,15 @@
 <title>Portfolio Ivanov</title>
 
 <style>
-body {
+
+/* RESET (INI YANG HILANGKAN PUTIH) */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial;
 }
 
@@ -41,7 +48,6 @@ nav a {
     top: 30px;
     min-width: 150px;
     border-radius: 5px;
-    overflow: hidden;
 }
 
 .dropdown-content a {
@@ -56,24 +62,32 @@ nav a {
 
 /* HERO */
 .hero {
+    width: 100%;
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center/cover;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center right/cover;
     display: flex;
     align-items: center;
     padding: 80px;
     color: white;
-    background-color: rgba(0,0,0,0.5);
-    background-blend-mode: darken;
+    position: relative;
 }
 
-/* TEXT KIRI */
+/* OVERLAY GELAP */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* TEXT DI ATAS OVERLAY */
 .hero-text {
+    position: relative;
     max-width: 500px;
 }
 
 .hero-text h1 {
     font-size: 50px;
-    margin: 0;
 }
 
 .hero-text p {
@@ -101,6 +115,7 @@ nav a {
 @media (max-width:600px){
     .hero {
         padding: 20px;
+        background-position: center;
     }
 
     .hero-text h1 {
@@ -111,6 +126,7 @@ nav a {
         flex-direction: column;
     }
 }
+
 </style>
 </head>
 
