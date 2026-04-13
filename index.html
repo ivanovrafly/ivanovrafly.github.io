@@ -11,27 +11,13 @@ body {
     font-family: Arial;
 }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center/cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    background-blend-mode: darken;
-    background-color: rgba(0,0,0,0.5);
-}
-
 /* NAVBAR */
 nav {
     position: absolute;
     top: 0;
     width: 100%;
     padding: 20px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 nav a {
@@ -41,7 +27,19 @@ nav a {
     font-weight: bold;
 }
 
-/* TEXT HERO */
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: darken;
+}
+
 .hero h1 {
     font-size: 50px;
     margin: 0;
@@ -58,18 +56,23 @@ nav a {
     background: #00c896;
     border: none;
     color: white;
-    cursor: pointer;
     border-radius: 5px;
 }
 
-/* CARD SECTION */
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARDS */
 .cards {
     display: flex;
-    justify-content: center;
     gap: 20px;
-    padding: 40px;
-    background: #f4f4f4;
+    padding: 40px 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    background: #f4f4f4;
 }
 
 .card {
@@ -80,14 +83,66 @@ nav a {
     text-align: center;
 }
 
+/* PORTFOLIO GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 10px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/* PROJECT */
+.project-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    background: white;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project div {
+    padding: 15px;
+}
+
+/* SECTION */
+.section {
+    padding: 40px 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
 /* RESPONSIVE */
-@media (max-width: 600px) {
+@media (max-width:600px){
     .hero h1 {
         font-size: 30px;
-    }
-
-    nav {
-        flex-direction: column;
     }
 }
 </style>
@@ -97,7 +152,6 @@ nav a {
 
 <nav>
     <a href="#">Home</a>
-    <a href="#about">About</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -108,6 +162,7 @@ nav a {
     <button class="btn">Lihat Portofolio</button>
 </div>
 
+<!-- SKILL -->
 <div class="cards">
     <div class="card">
         <h3>Modeling</h3>
@@ -125,55 +180,80 @@ nav a {
     </div>
 </div>
 
+<!-- PORTFOLIO -->
+<div style="background:#111; color:white;" class="section">
+    <div class="container">
+        <h2 style="text-align:center;">Portfolio</h2>
+
+        <div class="grid">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+        </div>
+    </div>
+</div>
+
+<!-- STATS -->
+<div style="background:#000; color:white;" class="section">
+    <div class="container stats">
+        <div>
+            <h2>10+</h2>
+            <p>Project</p>
+        </div>
+        <div>
+            <h2>3+</h2>
+            <p>Software</p>
+        </div>
+        <div>
+            <h2>5+</h2>
+            <p>Analisis</p>
+        </div>
+        <div>
+            <h2>100%</h2>
+            <p>Komitmen</p>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECT -->
+<div class="section" style="background:#f4f4f4;">
+    <div class="container">
+        <h2 style="text-align:center;">Project Saya</h2>
+
+        <div class="project-container">
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+                <div>
+                    <h3>Modeling Gelombang</h3>
+                    <p>Menggunakan MIKE 21 untuk simulasi.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+                <div>
+                    <h3>Analisis Pasut</h3>
+                    <p>Menggunakan metode Admiralty.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+    <div class="container">
+        <h2>Kontak</h2>
+        <p>Email: emailkamu@gmail.com</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Ivanov</p>
+</footer>
+
 </body>
-</html><div style="padding:40px; background:#111; color:white;">
-    <h2 style="text-align:center;">Portfolio Saya</h2>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:10px;">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-    </div>
-</div>
-<div style="background:#000; color:white; padding:30px; display:flex; justify-content:space-around; flex-wrap:wrap; text-align:center;">
-    <div>
-        <h2>10+</h2>
-        <p>Project</p>
-    </div>
-    <div>
-        <h2>3+</h2>
-        <p>Software</p>
-    </div>
-    <div>
-        <h2>5+</h2>
-        <p>Analisis</p>
-    </div>
-    <div>
-        <h2>100%</h2>
-        <p>Komitmen</p>
-    </div>
-</div>
-<div style="padding:40px; background:#f4f4f4;">
-    <h2 style="text-align:center;">Project Saya</h2>
-
-    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
-
-        <div style="background:white; width:250px; border-radius:10px; overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" style="width:100%;">
-            <div style="padding:15px;">
-                <h3>Modeling Gelombang</h3>
-                <p>Menggunakan MIKE 21 untuk simulasi.</p>
-            </div>
-        </div>
-
-        <div style="background:white; width:250px; border-radius:10px; overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" style="width:100%;">
-            <div style="padding:15px;">
-                <h3>Analisis Pasut</h3>
-                <p>Menggunakan metode Admiralty.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
+</html>
