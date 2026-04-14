@@ -217,8 +217,23 @@ nav a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 100px;
+}
 
-</style>
+.about-img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    width: 50%;
+}
 </style>
 </head>
 
@@ -257,26 +272,33 @@ nav a:hover {
 <!-- ABOUT -->
 <section id="about" class="about slide">
 
-    <div class="about-img">
-        <img src="https://picsum.photos/400/500">
-    </div>
+    <div class="about-container">
 
-    <div class="about-content">
-        <h5>ABOUT ME</h5>
-        <h2>Who Am I</h2>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-
-        <div class="skills">
-            <div>Lorem ⭐⭐⭐⭐</div>
-            <div>Lorem ⭐⭐⭐⭐</div>
-            <div>Lorem ⭐⭐⭐⭐</div>
-            <div>Lorem ⭐⭐⭐⭐</div>
+        <!-- FOTO -->
+        <div class="about-img">
+            <img src="https://picsum.photos/400/500" alt="Random">
         </div>
 
-        <button class="btn">Download CV</button>
+        <!-- TEXT -->
+        <div class="about-content">
+            <h5>ABOUT ME</h5>
+            <h2>Who Am I</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <div class="skills">
+                <div>Lorem ⭐⭐⭐⭐</div>
+                <div>Lorem ⭐⭐⭐⭐</div>
+                <div>Lorem ⭐⭐⭐⭐</div>
+                <div>Lorem ⭐⭐⭐⭐</div>
+            </div>
+
+            <button class="btn">Download CV</button>
+        </div>
+
     </div>
 
 </section>
