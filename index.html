@@ -189,11 +189,15 @@ nav a:hover {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 80px;
-    padding: 60px;
+    justify-content: space-between;
+    padding: 0 100px;
     background: #1e1e1e;
     color: white;
+}
+
+/* FOTO */
+.about-img {
+    width: 40%;
 }
 
 .about-img img {
@@ -201,8 +205,11 @@ nav a:hover {
     border-radius: 10px;
 }
 
+/* TEXT */
 .about-content {
+    width: 50%;
     max-width: 500px;
+    text-align: left;
 }
 
 .skills {
@@ -250,19 +257,16 @@ nav a:hover {
 <!-- ABOUT -->
 <section id="about" class="about slide">
 
-    <!-- FOTO -->
     <div class="about-img">
-        <img src="https://picsum.photos/400/500" alt="Random">
+        <img src="https://picsum.photos/400/500">
     </div>
 
-    <!-- TEXT -->
     <div class="about-content">
         <h5>ABOUT ME</h5>
         <h2>Who Am I</h2>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
         <div class="skills">
