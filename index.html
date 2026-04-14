@@ -234,6 +234,34 @@ nav a:hover {
 .about-content {
     width: 50%;
 }
+    /* ===================== */
+/* 🔥 RESPONSIVE MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+    .about-container {
+        flex-direction: column;   /* jadi ke bawah */
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .about-img {
+        width: 100%;
+    }
+
+    .about-img img {
+        width: 80%;   /* biar tidak terlalu besar */
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    .skills {
+        grid-template-columns: 1fr; /* jadi 1 kolom */
+    }
+}
 </style>
 </head>
 
