@@ -9,13 +9,15 @@
 /* SLIDER */
 .slider {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center;   /* 🔥 bikin sejajar vertikal */
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
 .slider-track {
-    width: 200px;
+    display: flex;
+    justify-content: center;
 }
 
 .slide {
@@ -23,6 +25,9 @@
     background: #333;
     padding: 20px;
     border-radius: 10px;
+
+    min-width: 220px;   /* 🔥 INI KUNCI */
+    text-align: center;
 }
 
 .slide a {
