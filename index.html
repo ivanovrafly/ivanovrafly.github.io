@@ -9,9 +9,9 @@
 /* SLIDER */
 .slider {
     display: flex;
-    align-items: center;   /* 🔥 bikin sejajar vertikal */
+    align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;   /* 🔥 jarak kiri-kanan sama */
     margin-top: 20px;
 }
 
@@ -47,12 +47,16 @@
 
 /* tombol */
 .prev, .next {
+    width: 40px;      /* 🔥 bikin sama besar */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #00c896;
     border: none;
     color: white;
-    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
 }
     /* === SECTION FULL PAGE === */
 html {
