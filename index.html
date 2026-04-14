@@ -6,7 +6,37 @@
 <title>Portfolio Ivanov</title>
 
 <style>
+/* SLIDER */
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 
+.slider-track {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.slide {
+    min-width: 300px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* BUTTON */
+.prev, .next {
+    background: #00c896;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
     /* === SECTION FULL PAGE === */
 html {
     scroll-behavior: smooth;
@@ -25,15 +55,27 @@ html {
     color: white;
     flex-direction: row;
 }
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 .about-img {
     width: 40%;
     display: flex;
     justify-content: center;
 }
-
 .about-content {
     width: 50%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 40px;
 }
 /* RESET (INI YANG HILANGKAN PUTIH) */
 * {
@@ -264,7 +306,26 @@ nav a:hover {
 }
 </style>
 </head>
+<script>
+let index = 0;
 
+const track = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+
+document.querySelector(".next").onclick = () => {
+    if (index < slides.length - 1) {
+        index++;
+        track.style.transform = `translateX(-${index * 300}px)`;
+    }
+};
+
+document.querySelector(".prev").onclick = () => {
+    if (index > 0) {
+        index--;
+        track.style.transform = `translateX(-${index * 300}px)`;
+    }
+};
+</script>
 <body>
 
 <!-- NAVBAR -->
@@ -298,33 +359,42 @@ nav a:hover {
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about slide">
+<section id="about" class="about">
 
     <div class="about-container">
 
-        <!-- FOTO -->
+        <!-- 1 FOTO -->
         <div class="about-img">
-            <img src="https://picsum.photos/400/500" alt="Random">
+            <img src="https://picsum.photos/400/500">
         </div>
 
-        <!-- TEXT -->
+        <!-- KANAN -->
         <div class="about-content">
-            <h5>ABOUT ME</h5>
-            <h2>Who Am I</h2>
 
+            <!-- 2 SAPAAN -->
+            <h4>HELLO 👋</h4>
+
+            <!-- 3 DESKRIPSI -->
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
-            <div class="skills">
-                <div>Lorem ⭐⭐⭐⭐</div>
-                <div>Lorem ⭐⭐⭐⭐</div>
-                <div>Lorem ⭐⭐⭐⭐</div>
-                <div>Lorem ⭐⭐⭐⭐</div>
+            <!-- 4 SLIDER -->
+            <div class="slider">
+
+                <button class="prev">❮</button>
+
+                <!-- 5 ISI YANG BERGESER -->
+                <div class="slider-track">
+                    <div class="slide">Profil 1</div>
+                    <div class="slide">Profil 2</div>
+                    <div class="slide">Profil 3</div>
+                </div>
+
+                <button class="next">❯</button>
+
             </div>
 
-            <button class="btn">Download CV</button>
         </div>
 
     </div>
