@@ -25,8 +25,14 @@
     border-radius: 10px;
 }
 
-.slide.active {
-    display: block;
+.slide a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.slide a:hover {
+    color: #00c896;
 }
 
 /* yang aktif tampil */
@@ -421,12 +427,28 @@ document.addEventListener("DOMContentLoaded", function () {
     <button class="prev">❮</button>
 
     <div class="slider-track">
-    <div class="slide active">Education Level</div>
-    <div class="slide">Organization Experience</div>
-    <div class="slide">Work Experience</div>
-    <div class="slide">Skills</div>
-    <div class="slide">Achievement & Other Experience</div>
-    <div class="slide">Contact Me</div>
+    <div class="slide active">
+    <a href="#edu">Education Level</a>
+</div>
+
+<div class="slide">
+    <a href="#org">Organization Experience</a>
+</div>
+
+<div class="slide">
+    <a href="#work">Work Experience</a>
+</div>
+
+<div class="slide">
+    <a href="#skills">Skills</a>
+</div>
+
+<div class="slide">
+    <a href="#achieve">Achievement & Other Experience</a>
+</div>
+
+<div class="slide">
+    <a href="#contact">Contact Me</a>
 </div>
 
     <button class="next">❯</button>
