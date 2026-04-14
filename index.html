@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;   /* 🔥 jarak kiri-kanan sama */
+    gap: 20px;
 }
 
 .slider-track {
@@ -64,11 +64,19 @@ section p {
 .prev, .next {
     width: 45px;
     height: 45px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;              /* 🔥 ini penting */
-    flex-shrink: 0;          /* 🔥 biar ga ketekan */
+
+    background: #00c896;  /* 🔥 warna hijau balik lagi */
+    color: white;
+    border: none;
+    border-radius: 8px;
+
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
 }
     /* === SECTION FULL PAGE === */
 html {
