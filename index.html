@@ -17,25 +17,27 @@
 .slider-track {
     display: flex;
     overflow: hidden;
-    width: 300px;
+    width: 250px;
+    transition: transform 0.3s ease;
 }
 
 .slide {
-    min-width: 300px;
+    min-width: 250px;
     background: #333;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
 }
 
-/* BUTTON */
+/* tombol */
 .prev, .next {
     background: #00c896;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 10; /* 🔥 penting biar bisa diklik */
 }
     /* === SECTION FULL PAGE === */
 html {
@@ -157,10 +159,14 @@ nav a:hover {
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
+.hero::before {
+    z-index: 0;
 }
 
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
 /* TEXT DI ATAS OVERLAY */
 .hero-text {
     position: relative;
@@ -307,23 +313,30 @@ nav a:hover {
 </style>
 </head>
 <script>
-let index = 0;
+window.onload = function () {
 
-const track = document.querySelector(".slider-track");
-const slides = document.querySelectorAll(".slide");
+    let index = 0;
 
-document.querySelector(".next").onclick = () => {
-    if (index < slides.length - 1) {
-        index++;
-        track.style.transform = `translateX(-${index * 300}px)`;
-    }
-};
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slide");
 
-document.querySelector(".prev").onclick = () => {
-    if (index > 0) {
-        index--;
-        track.style.transform = `translateX(-${index * 300}px)`;
-    }
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+
+    next.onclick = () => {
+        if (index < slides.length - 1) {
+            index++;
+            track.style.transform = "translateX(-" + (index * 250) + "px)";
+        }
+    };
+
+    prev.onclick = () => {
+        if (index > 0) {
+            index--;
+            track.style.transform = "translateX(-" + (index * 250) + "px)";
+        }
+    };
+
 };
 </script>
 <body>
