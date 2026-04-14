@@ -22,11 +22,16 @@
 }
 
 .slide {
-    min-width: 250px;
+    display: none; /* 🔥 semua disembunyikan */
     background: #333;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
+}
+
+/* 🔥 yang aktif saja muncul */
+.slide.active {
+    display: block;
 }
 
 /* tombol */
@@ -317,26 +322,27 @@ window.onload = function () {
 
     let index = 0;
 
-    const track = document.querySelector(".slider-track");
     const slides = document.querySelectorAll(".slide");
 
     const next = document.querySelector(".next");
     const prev = document.querySelector(".prev");
 
-    next.onclick = () => {
-        if (index < slides.length - 1) {
-            index++;
-            track.style.transform = "translateX(-" + (index * 250) + "px)";
-        }
-    };
+    function showSlide(i) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[i].classList.add("active");
+}
+  next.onclick = () => {
+    if (index < slides.length - 1) {
+        index++;
+        showSlide(index);
+    }
+};
 
-    prev.onclick = () => {
-        if (index > 0) {
-            index--;
-            track.style.transform = "translateX(-" + (index * 250) + "px)";
-        }
-    };
-
+prev.onclick = () => {
+    if (index > 0) {
+        index--;
+        showSlide(index);
+    }
 };
 </script>
 <body>
@@ -399,7 +405,7 @@ window.onload = function () {
 
                 <!-- 5 ISI YANG BERGESER -->
                 <div class="slider-track">
-                    <div class="slide">Profil 1</div>
+                    <div class="slide active">Profil 1</div>
                     <div class="slide">Profil 2</div>
                     <div class="slide">Profil 3</div>
                 </div>
