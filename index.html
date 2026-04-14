@@ -161,16 +161,25 @@ nav a:hover {
 }
 
 /* OVERLAY GELAP */
+.hero {
+    position: relative; /* 🔥 WAJIB */
+}  
 .hero::before {
     content: "";
     position: absolute;
-.hero::before {
-    z-index: 0;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 0; /* 🔥 penting */
 }
-
+    
 .hero-text {
     position: relative;
     z-index: 1;
+}
+    
+   .about {
+    position: relative;
+    z-index: 2; /* 🔥 biar di atas hero */
 }
 /* TEXT DI ATAS OVERLAY */
 .hero-text {
