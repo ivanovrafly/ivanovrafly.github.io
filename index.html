@@ -345,25 +345,26 @@ window.onload = function () {
     }
 
     next.onclick = function () {
-    index++;
+        index++;
 
-    if (index >= slides.length) {
-        index = 0; // balik ke awal
-    }
+        if (index >= slides.length) {
+            index = 0;
+        }
 
-    showSlide(index);
-};
-
-prev.onclick = function () {
-    index--;
-
-    if (index < 0) {
-        index = slides.length - 1; // balik ke terakhir
-    }
-
-    showSlide(index);
-};
+        showSlide(index);
     };
+
+    prev.onclick = function () {
+        index--;
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        showSlide(index);
+    };
+
+};
 
 };
 </script>
@@ -421,7 +422,7 @@ prev.onclick = function () {
             </p>
 
             <!-- 4 SLIDER -->
-            <div class="slider">
+         <div class="slider">
 
     <button class="prev">❮</button>
 
