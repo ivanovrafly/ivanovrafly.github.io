@@ -163,6 +163,40 @@ nav a:hover {
     align-items: center;
     flex-direction: column;
 }
+    .slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 60px;
+    background: #1e1e1e;
+    color: white;
+}
+
+.about-img img {
+    width: 320px;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 500px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+</style>
 </style>
 </head>
 
@@ -203,26 +237,24 @@ nav a:hover {
 
     <!-- FOTO -->
     <div class="about-img">
-        <img src="https://source.unsplash.com/400x500/?portrait" alt="Random">
+        <img src="https://picsum.photos/400/500" alt="Random">
     </div>
 
     <!-- TEXT -->
     <div class="about-content">
-        <h4>ABOUT ME</h4>
+        <h5>ABOUT ME</h5>
         <h2>Who Am I</h2>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
-        <!-- SKILL -->
         <div class="skills">
             <div>Lorem ⭐⭐⭐⭐</div>
             <div>Lorem ⭐⭐⭐⭐</div>
             <div>Lorem ⭐⭐⭐⭐</div>
-           <div>Lorem ⭐⭐⭐⭐</div>
+            <div>Lorem ⭐⭐⭐⭐</div>
         </div>
 
         <button class="btn">Download CV</button>
