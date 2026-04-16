@@ -360,6 +360,31 @@ nav a:hover {
         grid-template-columns: 1fr; /* jadi 1 kolom */
     }
 }
+    .timeline {
+    border-left: 3px solid #00c896;
+    padding-left: 20px;
+    margin-top: 40px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #00c896;
+    border-radius: 50%;
+}
+    .timeline-item:hover {
+    transform: translateX(5px);
+    transition: 0.3s;
+}
 </style>
 </head>
 <script>
@@ -474,7 +499,34 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- 🔥 TAMBAHKAN DI SINI -->
 <section id="edu">
     <h1>Education Level</h1>
-    <p>Ini isi pendidikan saya...</p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>MI (Madrasah Ibtidaiyah)</h3>
+            <span>2009 - 2015</span>
+            <p>Pendidikan dasar.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>MTs (Madrasah Tsanawiyah)</h3>
+            <span>2015 - 2018</span>
+            <p>Pendidikan menengah pertama.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>MA (Madrasah Aliyah)</h3>
+            <span>2018 - 2021</span>
+            <p>Jurusan (isi sesuai kamu).</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>ITS</h3>
+            <span>2022 - Sekarang</span>
+            <p>D4 Teknologi Rekayasa Konstruksi Bangunan Air.</p>
+        </div>
+
+    </div>
 </section>
 
 <section id="org">
