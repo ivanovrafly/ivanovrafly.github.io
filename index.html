@@ -367,9 +367,6 @@ section {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =====================
-    // SLIDER
-    // =====================
     let index = 0;
 
     const slides = document.querySelectorAll(".slide");
@@ -394,43 +391,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (index < 0) index = slides.length - 1;
             showSlide(index);
         });
-
     }
-
-    // =====================
-    // MENU TOGGLE
-    // =====================
-    const toggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    if (toggle && menu) {
-        toggle.addEventListener("click", function () {
-            menu.style.display =
-                menu.style.display === "block" ? "none" : "block";
-        });
-    }
-window.addEventListener("scroll", () => {
-    const items = document.querySelectorAll(".timeline-item");
-    const progress = document.getElementById("progress");
-
-    let section = document.querySelector(".timeline-section");
-    let rect = section.getBoundingClientRect();
-    let h = window.innerHeight;
-
-    if (rect.top < h) {
-        let p = (h - rect.top) / (h + rect.height);
-        p = Math.min(Math.max(p, 0), 1);
-
-        progress.style.width = p * 100 + "%";
-
-        items.forEach((el, i) => {
-            if (p > i / items.length) {
-                el.classList.add("active");
-            }
-        });
-    }
-});
-</script>
 
 });
 </script>
