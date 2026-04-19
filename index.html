@@ -23,7 +23,7 @@ html {
 }
 
 /* ===================== */
-/* HERO (TIDAK DIUBAH) */
+/* HERO */
 /* ===================== */
 .hero {
     position: relative;
@@ -143,7 +143,7 @@ section {
 }
 
 /* ===================== */
-/* ABOUT FIX TOTAL */
+/* ABOUT */
 /* ===================== */
 .about {
     display: flex;
@@ -168,13 +168,6 @@ section {
     box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* CARD */
 .about-card {
     max-width: 520px;
     padding: 40px;
@@ -182,12 +175,8 @@ section {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(0,200,150,0.2);
-    box-shadow:
-        0 0 60px rgba(0,200,150,0.15),
-        inset 0 0 25px rgba(0,200,150,0.1);
 }
 
-/* TEXT */
 .about-card p {
     text-align: justify;
     line-height: 1.8;
@@ -226,7 +215,6 @@ section {
     transform: translateY(0);
 }
 
-/* tombol */
 .prev, .next {
     width: 45px;
     height: 45px;
@@ -237,62 +225,13 @@ section {
     cursor: pointer;
 }
 
-/* LINK FIX */
-.slider-track .slide a,
-.slider-track .slide a:visited,
-.slider-track .slide a:active,
-.slider-track .slide a:link {
+.slider-track .slide a {
     color: #00c896 !important;
     text-decoration: none;
 }
 
-.slider-track .slide a:hover {
-    color: #00ffbb !important;
-}
-
 /* ===================== */
-/* CARD SECTION */
-/* ===================== */
-.edu-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.edu-card {
-    background: rgba(0, 200, 150, 0.1);
-    padding: 20px;
-    border-radius: 15px;
-    width: 220px;
-    text-align: center;
-    color: white;
-}
-
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-@media (max-width: 768px) {
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-card {
-        padding: 25px;
-    }
-
-    .about-card p {
-        text-align: center;
-    }
-    /* ===================== */
-/* TIMELINE FINAL */
+/* TIMELINE (GLOBAL FIX) */
 /* ===================== */
 
 .timeline-section {
@@ -347,7 +286,6 @@ section {
     background: #555;
     border-radius: 50%;
     margin: auto;
-    transition: 0.3s;
 }
 
 .timeline-item.active .timeline-dot {
@@ -360,17 +298,29 @@ section {
     background: rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 12px;
-    backdrop-filter: blur(10px);
 }
-.timeline {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-}
-.timeline-item {
-    width: 22%;
-}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
 @media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-card p {
+        text-align: center;
+    }
+
+    /* timeline mobile */
     .timeline {
         flex-direction: column;
         gap: 40px;
