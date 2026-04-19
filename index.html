@@ -138,8 +138,8 @@ html {
 /* SECTION */
 /* ===================== */
 section {
-    padding: 100px;
-    min-height: 100vh;
+    padding: 60px 10%;
+    min-height: auto;
 }
 
 /* ===================== */
@@ -194,19 +194,25 @@ section {
 
 .slider-track {
     position: relative;
-    min-width: 220px;
+    height: 50px; /* sesuaikan tinggi */
 }
 
 .slide {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+
     text-align: center;
     padding: 12px 20px;
     border-radius: 10px;
     background: rgba(255,255,255,0.05);
 
     opacity: 0;
-    position: absolute;
-    transform: translateY(10px);
-    transition: 0.5s ease;
+    transform: translateX(40px) scale(0.95);
+    transition: all 0.5s ease;
+
+    pointer-events: none;
 }
 
 .slide.active {
@@ -235,14 +241,14 @@ section {
 /* ===================== */
 
 .timeline-section {
-    padding: 120px 10%;
+    padding: 80px 10% 40px;
     background: radial-gradient(circle, #0a0a0a, #000);
     color: white;
 }
 
 .timeline-title {
     font-size: 42px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -283,14 +289,12 @@ section {
 .timeline-dot {
     width: 18px;
     height: 18px;
-    background: #555;
+    background: #00c896;
     border-radius: 50%;
     margin: auto;
-}
+    margin-bottom: 20px;
 
-.timeline-item.active .timeline-dot {
-    background: #00c896;
-    box-shadow: 0 0 15px #00c896;
+    box-shadow: 0 0 15px #00c896, 0 0 30px rgba(0,200,150,0.5);
 }
 
 .timeline-content {
@@ -330,9 +334,6 @@ section {
         width: 50%;
     }
 
-    .timeline-line,
-    .timeline-progress {
-        display: none;
     }
     .timeline-line {
     top: 35%;
@@ -343,22 +344,671 @@ section {
     .timeline-dot {
     margin-bottom: 15px;
     }
-.timeline-content {
-    position: relative;
-    z-index: 2;
-.timeline-line,
+    .timeline-line,
 .timeline-progress {
-    z-index: 1;
+    display: none !important;
 }
-.timeline-dot {
+    /* ===================== */
+/* ORGANIZATION GRID */
+/* ===================== */
+
+#org {
+    padding: 120px 10%;
+    background: #000;
+    color: white;
+    text-align: center;
+}
+
+#org h1 {
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+/* GRID */
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.org-card {
     position: relative;
-    z-index: 3;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* IMAGE */
+.org-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* OVERLAY */
+.org-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* TEXT */
+.org-overlay h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.org-overlay p {
+    color: #00c896;
+}
+
+/* HOVER EFFECT */
+.org-card:hover img {
+    transform: scale(1.1);
+}
+
+.org-card:hover .org-overlay {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .org-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+/* ===================== */
+/* WORK SLIDER */
+/* ===================== */
+
+#work {
+    padding: 120px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+    text-align: center;
+}
+
+#work h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.work-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* card */
+.work-card {
+    min-width: 260px;
+    padding: 25px;
+    border-radius: 16px;
+    color: white;
+    flex-shrink: 0;
+
+    background: linear-gradient(135deg, #00c896, #00ffcc);
+    transition: 0.3s;
+}
+
+/* variasi warna */
+.work-card:nth-child(2) {
+    background: linear-gradient(135deg, #6a5acd, #9370db);
+}
+.work-card:nth-child(3) {
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
+}
+.work-card:nth-child(4) {
+    background: linear-gradient(135deg, #00bcd4, #2196f3);
+}
+
+/* hover */
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+/* text */
+.work-card h3 {
+    margin-bottom: 10px;
+}
+
+.work-card span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.work-card p {
+    font-size: 14px;
+}
+.work-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
+
+.work-nav button {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(0,200,150,0.2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-    
-    
-    
+
+.work-nav button:hover {
+    background: #00c896;
+    color: black;
+}
+/* ===================== */
+/* WORK GRID */
+/* ===================== */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* card */
+.work-card {
+    position: relative;
+    height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #00c896, #00ffcc);
+}
+
+/* variasi warna */
+.work-card:nth-child(2) {
+    background: linear-gradient(135deg, #6a5acd, #9370db);
+}
+.work-card:nth-child(3) {
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
+}
+.work-card:nth-child(4) {
+    background: linear-gradient(135deg, #00bcd4, #2196f3);
+}
+
+/* overlay */
+.work-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.4s;
+    text-align: center;
+    padding: 15px;
+}
+
+/* hover */
+.work-card:hover .work-overlay {
+    opacity: 1;
+}
+
+/* text */
+.work-overlay h3 {
+    margin-bottom: 5px;
+}
+
+.work-overlay p {
+    color: #00c896;
+    margin-bottom: 5px;
+}
+
+.work-overlay span {
+    font-size: 13px;
+    color: #ccc;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===================== */
+/* SKILLS */
+/* ===================== */
+
+#skills {
+    padding: 120px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+    text-align: center;
+}
+
+#skills h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+/* container */
+.skills-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* card */
+.skill-card {
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,200,150,0.2);
+}
+
+/* title */
+.skill-card h3 {
+    margin-bottom: 20px;
+}
+
+/* skill item */
+.skill {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* bar background */
+.bar {
+    width: 100%;
+    height: 8px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* bar fill */
+.bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg,#00c896,#00ffcc);
+    border-radius: 10px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ===================== */
+/* ACHIEVEMENT */
+/* ===================== */
+
+#achieve {
+    padding: 120px 10%;
+    background: #000;
+    color: white;
+    text-align: center;
+}
+
+#achieve h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+/* grid */
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* card */
+.achieve-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,200,150,0.2);
+    transition: 0.3s;
+}
+
+/* hover */
+.achieve-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,200,150,0.4);
+}
+
+/* icon */
+.achieve-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* text */
+.achieve-card h3 {
+    margin-bottom: 10px;
+    color: #00c896;
+}
+
+.achieve-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .achieve-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===================== */
+/* CONTACT */
+/* ===================== */
+
+#contact {
+    padding: 120px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+/* container */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* card */
+.contact-card {
+    padding: 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,200,150,0.2);
+
+    transition: 0.3s;
+}
+
+/* hover */
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0,200,150,0.4);
+}
+
+/* icon */
+.contact-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* text */
+.contact-card h3 {
+    margin-bottom: 10px;
+    color: #00c896;
+}
+
+.contact-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* khusus instagram biar beda */
+.contact-card:nth-child(2) .contact-icon {
+    color: #e1306c;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+.prev, .next {
+    position: relative;
+    z-index: 10;
+}
+.slider {
+    position: relative;
+    z-index: 5;
+}
+.slide.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+
+    border: 1px solid #00c896;
+    box-shadow: 
+        0 0 10px #00c896,
+        0 0 25px rgba(0,200,150,0.6);
+}
+/* versi tanpa gambar */
+.org-card.no-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,200,150,0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* isi */
+.org-content {
+    text-align: center;
+}
+
+.org-content h3 {
+    margin-bottom: 5px;
+}
+
+.org-content p {
+    color: #00c896;
+}
+
+/* hover effect */
+.org-card.no-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,200,150,0.4);
+}
+#org {
+    margin-top: -40px;
+}
+/* GRID */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+.work-card {
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(135deg, #00c896, #00ffcc);
+    transition: 0.3s;
+}
+
+/* warna variasi */
+.work-card:nth-child(2) {
+    background: linear-gradient(135deg, #6a5acd, #9370db);
+}
+.work-card:nth-child(3) {
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
+}
+.work-card:nth-child(4) {
+    background: linear-gradient(135deg, #00bcd4, #2196f3);
+}
+
+/* hover */
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+/* isi */
+.work-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.work-card h3 {
+    margin-bottom: 5px;
+}
+
+.work-card p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 5px;
+}
+
+.work-card span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  border: 1px solid #00ffc3;
+}
+
+.skill {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.progress {
+  background: #333;
+  border-radius: 10px;
+  height: 8px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: #00ffc3;
+  border-radius: 10px;
+}
+.skills {
+  background-color: #000; /* biar full dark */
+  color: white;
+  padding: 80px 20px;
+}
+.skills {
+  background: linear-gradient(to bottom, #000, #050505);
+}
+.skills h2 {
+  margin-bottom: 40px; /* atur jarak ke bawah */
+  font-size: 32px;
+}
+.skills h2,
+.card h3,
+.skill p {
+  text-transform: capitalize;
+}
+.skills-container {
+  margin-top: 20px;
+  gap: 40px;
+}
+.greeting {
+  color: #00ffc3;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.org-card {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.org-link {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #00c896;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.org-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0,200,150,0.4);
+}
+
+.org-card:hover .org-link {
+  opacity: 1;
+}
+.achieve-card {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.achieve-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #00c896;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.achieve-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0,200,150,0.4);
+}
+
+.achieve-card:hover .achieve-link {
+  opacity: 1;
+}
 </style>
 </head>
 <script>
@@ -366,9 +1016,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let index = 0;
 
-    const slides = document.querySelectorAll(".slide");
-    const next = document.querySelector(".next");
-    const prev = document.querySelector(".prev");
+    const slides = document.querySelectorAll(".slider .slide");
+    const next = document.querySelector(".slider .next");
+    const prev = document.querySelector(".slider .prev");
 
     function showSlide(i) {
         slides.forEach(s => s.classList.remove("active"));
@@ -376,21 +1026,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (next && prev && slides.length > 0) {
+next.addEventListener("click", function () {
+    index++;
+    if (index >= slides.length) index = 0;
+    showSlide(index);
+});
 
-        next.addEventListener("click", function () {
-            index++;
-            if (index >= slides.length) index = 0;
-            showSlide(index);
-        });
+prev.addEventListener("click", function () {
+    index--;
+    if (index < 0) index = slides.length - 1;
+    showSlide(index);
+});
 
-        prev.addEventListener("click", function () {
-            index--;
-            if (index < 0) index = slides.length - 1;
-            showSlide(index);
-        });
+    } else {
+        console.log("Slider tidak terbaca!");
     }
 
 });
+    
 </script>
 <body>
 <!-- HERO -->
@@ -435,14 +1088,16 @@ document.addEventListener("DOMContentLoaded", function () {
            <div class="about-card">
 
             <!-- 2 SAPAAN -->
-            <h4>HELLO 👋</h4>
+            <h4>Hi, I'm Ivan</h4>
 
             <!-- 3 DESKRIPSI -->
             <p>
-Saya merupakan mahasiswa tingkat akhir D4 Departemen Teknik Infrastruktur Sipil ITS dengan fokus pada bidang Teknologi Rekayasa Konstruksi Bangunan Air. 
-Saya memiliki pemahaman teknis dalam menganalisis data serta merancang solusi di bidang infrastruktur air. 
-Selain itu, saya mampu bekerja secara mandiri maupun dalam tim dengan komunikasi yang baik. 
-Dengan keterampilan dan semangat belajar yang tinggi, saya siap berkontribusi dalam mendukung kelancaran pekerjaan serta mencapai tujuan secara profesional.
+<p>
+I'm a final-year D4 student in Civil Infrastructure Engineering at ITS, focusing on Water Construction Engineering Technology. 
+I enjoy working with data and planning solutions for sustainable water infrastructure.
+
+I can work both independently and in a team, and I value clear communication and professionalism. 
+Right now, I'm continuously improving my skills to be ready for real-world challenges.
 </p>
 
             <!-- 4 SLIDER -->
@@ -515,189 +1170,244 @@ Dengan keterampilan dan semangat belajar yang tinggi, saya siap berkontribusi da
 </section>
 
 <section id="org">
-    <h1>Organizational Experience</h1>
+    <h1>Organization Experience</h1>
 
-    <div class="edu-container">
+    <div class="org-grid">
 
-        <div class="edu-card">
-            <div class="edu-icon">💼</div>
+    <a href="https://www.instagram.com/p/C7_yNaXpcbv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="org-card no-image">
+        <div class="org-content">
             <h3>EMM HMDS ITS</h3>
-            <span>Staff</span>
-            <p>Departemen ekonomi & kewirausahaan HMDS ITS.</p>
+            <p>Staff Ekonomi</p>
+            <span class="org-link">View Post ↗</span>
         </div>
+    </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">🎉</div>
-            <h3>D’Village 13th</h3>
-            <span>Expert Staff Decoration</span>
-            <p>Event besar HMDS ITS (seminar, workshop, kompetisi, konser).</p>
+    <a href="https://www.instagram.com/p/C7l4HG-pYhX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="org-card no-image">
+        <div class="org-content">
+            <h3>D'village 13</h3>
+            <p>Expert Staff Decoration</p>
+            <span class="org-link">View Post ↗</span>
         </div>
+    </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">🎨</div>
-            <h3>D’Village 12th</h3>
-            <span>Staff Dekorasi</span>
-            <p>Event nasional HMDS ITS.</p>
+    <a href="https://www.instagram.com/p/Cu6pMYSRq2v/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="org-card no-image">
+        <div class="org-content">
+            <h3>D'village 12</h3>
+            <p>Staff Decoration</p>
+            <span class="org-link">View Post ↗</span>
         </div>
+    </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">📢</div>
-            <h3>IKAMANSA Expo</h3>
-            <span>Staff Dekorasi & Dokumentasi</span>
-            <p>Sosialisasi pendidikan tingkat lanjut.</p>
+    <a href="https://www.instagram.com/p/Cm5-mKMpkQF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="org-card no-image">
+        <div class="org-content">
+            <h3>IKAMANSA EXPO</h3>
+            <p>Media & Decoration</p>
+            <span class="org-link">View Post ↗</span>
         </div>
+    </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">🏫</div>
-            <h3>ITS Expo 2023</h3>
-            <span>Staff Dekorasi</span>
-            <p>Event branding inovasi mahasiswa ITS.</p>
+    <a href="https://www.instagram.com/its_expo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="org-card no-image">
+        <div class="org-content">
+            <h3>ITS EXPO</h3>
+            <p>Decoration Team</p>
+            <span class="org-link">View Profile ↗</span>
         </div>
+    </a>
 
-    </div>
+</div>
 </section>
    
 <section id="work">
     <h1>Work Experience</h1>
 
-    <div class="edu-container">
+    <div class="work-grid">
 
-        <div class="edu-card">
-            <div class="edu-icon">🏗️</div>
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">🌊</div>
             <h3>Nippon Koei</h3>
-            <span>Internship (2025)</span>
-            <p>Konsultan internasional proyek Bali Beach Conservation (JICA).</p>
+            <p>Internship (2025)</p>
+            <span>Konsultan internasional proyek Bali Beach Conservation (JICA).</span>
         </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">📊</div>
-            <h3>DKPU ITS</h3>
-            <span>Anggota (2024)</span>
-            <p>Survei harga material & alat berat Kediri dan Blitar.</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">🌾</div>
-            <h3>DKPU ITS</h3>
-            <span>Anggota (2025)</span>
-            <p>Tim survei & desain optimasi lahan non rawa (Pamekasan & Sumenep).</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">🏢</div>
-            <h3>CV. Intishar Karya</h3>
-            <span>Internship</span>
-            <p>Pengawas lapangan rehabilitasi saluran irigasi Mojokerto.</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">📺</div>
-            <h3>Jack Advertising</h3>
-            <span>Team Produksi</span>
-            <p>Produksi & pemasaran media periklanan.</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">🎉</div>
-            <h3>Bintang Decoration</h3>
-            <span>Team Lapangan</span>
-            <p>Event dekorasi wedding dan lainnya.</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">📷</div>
-            <h3>Media Santri Ngasinan</h3>
-            <span>Crew</span>
-            <p>Media resmi pondok pesantren Al-Amien.</p>
-        </div>
-
     </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">📊</div>
+            <h3>DKPU ITS</h3>
+            <p>Anggota (2024)</p>
+            <span>Survei harga material & alat berat Kediri dan Blitar.</span>
+        </div>
+    </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">📐</div>
+            <h3>DKPU ITS</h3>
+            <p>Anggota (2025)</p>
+            <span>Tim survei & desain optimasi lahan non rawa.</span>
+        </div>
+    </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">🏗️</div>
+            <h3>CV. Intishar Karya</h3>
+            <p>Internship</p>
+            <span>Pengawas lapangan rehabilitasi saluran irigasi Mojokerto.</span>
+        </div>
+    </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">🎯</div>
+            <h3>Jack Advertising</h3>
+            <p>Team Produksi</p>
+            <span>Produksi & pemasaran media periklanan.</span>
+        </div>
+    </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">🎨</div>
+            <h3>Bintang Decoration</h3>
+            <p>Team Lapangan</p>
+            <span>Event dekorasi wedding dan lainnya.</span>
+        </div>
+    </div>
+
+    <div class="work-card">
+        <div class="work-content">
+            <div class="work-icon">📸</div>
+            <h3>Media Santri</h3>
+            <p>Crew</p>
+            <span>Media resmi pondok pesantren.</span>
+        </div>
+    </div>
+
+</div>
 </section>
 
-<section id="skills">
-    <h1>Skills</h1>
-   <div class="edu-card">
-    <div class="edu-icon">🛠️</div>
-    <h3>Technical Skills</h3>
-    <p>Analisis data, perencanaan konstruksi, survei lapangan, pengawasan proyek.</p>
-</div>
-    <div class="edu-card">
-    <div class="edu-icon">💻</div>
-    <h3>Software</h3>
-    <p>AutoCAD, Excel, Word, PowerPoint, (tambahkan: HEC-RAS / MIKE / ArcGIS kalau ada).</p>
-</div>
+<section class="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-container">
+
+    <!-- Hard Skills -->
+    <div class="card">
+      <h3>Hard Skills</h3>
+
+      <div class="skill">
+        <p>Data Analysis</p>
+        <div class="progress"><span style="width: 75%"></span></div>
+      </div>
+
+      <div class="skill">
+        <p>Project Planning</p>
+        <div class="progress"><span style="width: 75%"></span></div>
+      </div>
+
+      <div class="skill">
+        <p>Software Usage</p>
+        <div class="progress"><span style="width: 75%"></span></div>
+      </div>
+
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="card">
+      <h3>Soft Skills</h3>
+
+      <div class="skill">
+        <p>Communication</p>
+        <div class="progress"><span style="width: 85%"></span></div>
+      </div>
+
+      <div class="skill">
+        <p>Negotiation</p>
+        <div class="progress"><span style="width: 75%"></span></div>
+      </div>
+
+      <div class="skill">
+        <p>English</p>
+        <div class="progress"><span style="width: 60%"></span></div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <section id="achieve">
-    <h1>Achievements & Other Experience</h1>
+    <h1>Achievements & Experience</h1>
 
-    <div class="achieve-container">
+    <div class="achieve-grid">
 
-        <div class="achieve-card">
-            <h3>🏆 Finalis</h3>
-            <p>Creative Students Skill 3rd Universitas Surabaya (2025)</p>
-        </div>
+    <a href="https://www.instagram.com/p/DTHJX-jEvN0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="achieve-card">
+        <div class="achieve-icon">🏆</div>
+        <h3>2nd Place</h3>
+        <p>Creative Students Skill 3rd Universitas Surabaya (2025)</p>
+        <span class="achieve-link">View Post ↗</span>
+    </a>
 
-        <div class="achieve-card">
-            <h3>🥇 Juara 1</h3>
-            <p>Inovasi Mahasiswa Diesnat FT Universitas Gorontalo (2025)</p>
-        </div>
+    <a href="https://www.instagram.com/p/DPLXQqsEhXG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="achieve-card">
+        <div class="achieve-icon">🥇</div>
+        <h3>1st Place</h3>
+        <p>Inovasi Mahasiswa Diesnat FT Universitas Gorontalo (2025)</p>
+        <span class="achieve-link">View Post ↗</span>
+    </a>
 
-        <div class="achieve-card">
-            <h3>🥉 Juara Harapan</h3>
-            <p>National Tender Competition Civil Carnival UMP (2025)</p>
-        </div>
+    <a href="https://www.instagram.com/p/DKSA8yHJpeV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="achieve-card">
+        <div class="achieve-icon">🥉</div>
+        <h3>Honorable Mention</h3>
+        <p>National Tender Competition Civil Carnival UMP (2025)</p>
+        <span class="achieve-link">View Post ↗</span>
+    </a>
 
-        <div class="achieve-card">
-            <h3>🤝 Volunteer</h3>
-            <p>Sosmas Enviro Celebration BEM Vokasi (2024)</p>
-        </div>
+    <a href="https://www.instagram.com/p/C_cpsmPJasU/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" target="_blank" class="achieve-card">
+        <div class="achieve-icon">🤝</div>
+        <h3>Volunteer</h3>
+        <p>Sosmas Enviro Celebration BEM Vokasi (2024)</p>
+        <span class="achieve-link">View Post ↗</span>
+    </a>
 
-        <div class="achieve-card">
-            <h3>🌱 Pengabdian</h3>
-            <p>KKN-PM Pengairan Lahan Jember (2023)</p>
-        </div>
+    <a href="https://www.youtube.com/watch?v=rk1FpXTbjpU" target="_blank" class="achieve-card">
+        <div class="achieve-icon">🌱</div>
+        <h3>Community Service</h3>
+        <p>KKN-PM Pengairan Lahan Jember (2023)</p>
+        <span class="achieve-link">Watch Video ↗</span>
+    </a>
 
-        <div class="achieve-card">
-            <h3>🎓 Pelatihan</h3>
-            <p>Basic Media Schooling (2023)</p>
-        </div>
-
-    </div>
+</div>
 </section>
 
 <section id="contact">
     <h1>Contact Me</h1>
 
-    <div class="edu-container">
+    <div class="contact-container">
 
-        <div class="edu-card">
-            <div class="edu-icon">📧</div>
+        <a href="mailto:ivanovrafly03@gmail.com" class="contact-card">
+            <div class="contact-icon">📧</div>
             <h3>Email</h3>
             <p>ivanovrafly03@gmail.com</p>
-        </div>
+        </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">📱</div>
-            <h3>Phone</h3>
-            <p>+62 857 3049 5806</p>
-        </div>
+        <a href="https://www.instagram.com/ivanovra.fly" target="_blank" class="contact-card">
+            <div class="contact-icon">📸</div>
+            <h3>Instagram</h3>
+            <p>@ivanovraf.fly</p>
+        </a>
 
-        <div class="edu-card">
-            <div class="edu-icon">💼</div>
+        <a href="https://www.linkedin.com/in/ivanov-rafly-70040830a" target="_blank" class="contact-card">
+            <div class="contact-icon">💼</div>
             <h3>LinkedIn</h3>
-            <p>
-                <a href="https://www.linkedin.com/in/ivanov-rafly-70040830a" target="_blank">
-                    View Profile
-                </a>
-            </p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">📍</div>
-            <h3>Location</h3>
-            <p>Surabaya, Indonesia</p>
-        </div>
+            <p>View Profile</p>
+        </a>
+        <a href="CVIVAN.pdf" target="_blank" class="contact-card">
+             <div class="contact-icon">📄</div>
+             <h3>Curriculum Vitae</h3>
+             <p>Show CV</p>
+        </a>
 
     </div>
 </section>
