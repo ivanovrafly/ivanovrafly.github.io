@@ -362,6 +362,29 @@ section {
     border-radius: 12px;
     backdrop-filter: blur(10px);
 }
+.timeline {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+.timeline-item {
+    width: 22%;
+}
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .timeline-item {
+        width: 100%;
+    }
+
+    .timeline-line,
+    .timeline-progress {
+        display: none;
+    }
+}
 </style>
 </head>
 <script>
