@@ -365,9 +365,39 @@ section {
 
 .slide {
     text-align: center;
-    padding: 12px 20px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
+    padding: 12px 25px;
+    border-radius: 12px;
+
+    background: rgba(0,200,150,0.08);
+    border: 1px solid rgba(0,200,150,0.2);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    position: absolute;
+    transform: translateY(10px);
+    transition: 0.5s ease;
+}
+    .slide a {
+    color: #00c896;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.slide a:hover {
+    color: #00ffbb;
+}
+.slide.active {
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+
+    box-shadow: 0 0 20px rgba(0,200,150,0.15);
+}
+.prev:hover, .next:hover {
+    background: #00c896;
+    box-shadow: 0 0 12px #00c896;
+    transform: scale(1.1);
 }
     
 </style>
