@@ -1,274 +1,645 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Ivanov</title>
 
 <style>
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===================== */
 /* HERO (TIDAK DIUBAH) */
-.hero{
-position:relative;height:100vh;display:flex;
-align-items:center;justify-content:space-between;
-padding:80px;color:white;
-background:url('bg_home.png') no-repeat center/cover;
+/* ===================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    color: white;
+    background: url('bg_home.png') no-repeat center center/cover;
 }
-.hero::before{
-content:"";position:absolute;inset:0;
-background:rgba(0,0,0,0.6);
-}
-.hero-content{position:relative;z-index:2;max-width:600px;}
-.hero-content h1{font-size:60px;}
-.hero-content h2{font-size:22px;color:#00c896;margin-top:10px;}
-.hero-content p{margin-top:20px;color:#ccc;}
-.hero-btn{margin-top:30px;display:flex;gap:15px;}
-.btn-outline,.btn-solid{
-padding:12px 25px;border-radius:6px;text-decoration:none;
-}
-.btn-outline{border:2px solid #00c896;color:#00c896;}
-.btn-outline:hover{background:#00c896;color:black;}
-.btn-solid{background:#00c896;color:black;}
-.btn-solid:hover{opacity:.8;}
 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    color: #00c896;
+    margin-top: 10px;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.hero-btn {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline {
+    padding: 12px 25px;
+    border: 2px solid #00c896;
+    color: #00c896;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-outline:hover {
+    background: #00c896;
+    color: black;
+}
+
+.btn-solid {
+    padding: 12px 25px;
+    background: #00c896;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-solid:hover {
+    opacity: 0.8;
+}
+
+/* ===================== */
 /* NAVBAR */
-.navbar{position:absolute;top:30px;right:40px;z-index:999;}
-.menu-toggle{font-size:28px;color:white;cursor:pointer;}
-.menu{
-display:none;flex-direction:column;
-position:absolute;right:0;top:40px;
-background:rgba(0,0,0,0.85);
-border-radius:10px;
+/* ===================== */
+.navbar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 999;
 }
-.menu a{padding:12px 20px;color:white;text-decoration:none;}
-.menu a:hover{background:rgba(0,200,150,0.2);color:#00c896;}
 
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.menu a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    background: rgba(0,200,150,0.2);
+    color: #00c896;
+}
+
+/* ===================== */
 /* SECTION */
-section{padding:100px;min-height:100vh;}
+/* ===================== */
+section {
+    padding: 100px;
+    min-height: 100vh;
+}
 
-/* ABOUT (TIDAK DIUBAH) */
-.about{
-display:flex;justify-content:center;align-items:center;
-padding:100px 10%;
-background:radial-gradient(circle,#0a0a0a,#000);
-color:white;
+/* ===================== */
+/* ABOUT FIX TOTAL */
+/* ===================== */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
 }
-.about-container{
-display:flex;gap:60px;max-width:1100px;width:100%;
-}
-.about-img img{
-width:300px;border-radius:20px;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
-}
-.about-content{display:flex;justify-content:center;}
-.about-card{
-max-width:520px;padding:40px;border-radius:20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(25px);
-border:1px solid rgba(0,200,150,0.2);
-}
-.about-card p{line-height:1.8;color:#ccc;text-align:justify;}
 
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.about-img img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.about-card {
+    max-width: 520px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0,200,150,0.2);
+    box-shadow:
+        0 0 60px rgba(0,200,150,0.15),
+        inset 0 0 25px rgba(0,200,150,0.1);
+}
+
+/* TEXT */
+.about-card p {
+    text-align: justify;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* ===================== */
 /* SLIDER */
-.slider{display:flex;align-items:center;gap:20px;}
-.slider-track{position:relative;min-width:220px;}
-.slide{
-opacity:0;position:absolute;
-transform:translateY(10px);
-transition:.5s;
-background:rgba(255,255,255,0.05);
-padding:12px 20px;border-radius:10px;
+/* ===================== */
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.slide.active{opacity:1;position:relative;transform:none;}
-.prev,.next{
-width:45px;height:45px;border-radius:12px;
-background:rgba(0,200,150,0.15);
-color:white;border:none;cursor:pointer;
+
+.slider-track {
+    position: relative;
+    min-width: 220px;
 }
-.slide a{color:#00c896;text-decoration:none;}
+
+.slide {
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+
+    opacity: 0;
+    position: absolute;
+    transform: translateY(10px);
+    transition: 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+}
+
+/* tombol */
+.prev, .next {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(0,200,150,0.15);
+    border: 1px solid rgba(0,200,150,0.3);
+    color: white;
+    cursor: pointer;
+}
+
+/* LINK FIX */
+.slider-track .slide a,
+.slider-track .slide a:visited,
+.slider-track .slide a:active,
+.slider-track .slide a:link {
+    color: #00c896 !important;
+    text-decoration: none;
+}
+
+.slider-track .slide a:hover {
+    color: #00ffbb !important;
+}
 
 /* ===================== */
-/* TIMELINE (FIXED) */
+/* CARD SECTION */
 /* ===================== */
-
-.timeline-section{
-padding:120px 10%;
-background:radial-gradient(circle,#0a0a0a,#000);
-color:white;
+.edu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.timeline-title{
-font-size:42px;margin-bottom:80px;
-text-shadow:0 0 20px rgba(0,200,150,0.3);
+.edu-card {
+    background: rgba(0, 200, 150, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 220px;
+    text-align: center;
+    color: white;
 }
 
-.timeline{
-position:relative;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+@media (max-width: 768px) {
 
-.timeline-line{
-position:absolute;top:50%;left:0;width:100%;
-height:4px;background:#222;
-transform:translateY(-50%);
-}
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.timeline-progress{
-position:absolute;top:50%;left:0;
-height:4px;width:0%;
-background:linear-gradient(90deg,#00c896,#00ffcc);
-transform:translateY(-50%);
-box-shadow:0 0 20px #00c896;
-transition:.5s;
-}
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.timeline-item{width:22%;text-align:center;}
+    .about-card {
+        padding: 25px;
+    }
 
-.timeline-dot{
-width:18px;height:18px;background:#555;
-border-radius:50%;margin:auto;
-}
-
-.timeline-item.active .timeline-dot{
-background:#00c896;
-box-shadow:0 0 15px #00c896;
-}
-
-.timeline-content{
-margin-top:25px;
-background:rgba(255,255,255,0.05);
-padding:20px;border-radius:12px;
-backdrop-filter:blur(10px);
-}
-
-.timeline-content h3{color:#00c896;}
-.timeline-content span{color:#aaa;font-size:13px;}
-.timeline-content p{color:#ddd;margin-top:10px;}
-
-.timeline-item:hover .timeline-content{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,200,150,0.3);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.hero{flex-direction:column;text-align:center;}
-.about-container{flex-direction:column;}
-.timeline{flex-direction:column;gap:50px;}
-.timeline-line,.timeline-progress{display:none;}
-.timeline-item{width:100%;}
+    .about-card p {
+        text-align: center;
+    }
 }
 </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    // =====================
+    // SLIDER
+    // =====================
+    let index = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+
+    function showSlide(i) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[i].classList.add("active");
+    }
+
+    if (next && prev && slides.length > 0) {
+
+        next.addEventListener("click", function () {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        });
+
+        prev.addEventListener("click", function () {
+            index--;
+            if (index < 0) index = slides.length - 1;
+            showSlide(index);
+        });
+
+    }
+
+    // =====================
+    // MENU TOGGLE
+    // =====================
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+            menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+        });
+    }
+
+});
+</script>
 <body>
-
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<h1>IVANOV RAFLY</h1>
-<h2>Water Infrastructure Engineering Student</h2>
-<p>Building sustainable and resilient water systems.</p>
-</div>
+
+    <!-- NAVBAR -->
+<nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <div class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+        <h1>IVANOV RAFLY</h1>
+        <h2>Water Infrastructure Engineering Student</h2>
+        <p>Building sustainable and resilient water systems.</p>
+
+        <div class="hero-btn">
+            <a href="#about" class="btn-outline">View My Profile</a>
+            <a href="#contact" class="btn-solid">Contact Me</a>
+        </div>
+    </div>
+    
 </section>
 
 <!-- ABOUT -->
-<section class="about">
-<div class="about-container">
+<section id="about" class="about">
 
-<div class="about-img">
-<img src="BackgorundHome.jpeg">
-</div>
+    <div class="about-container">
 
-<div class="about-content">
-<div class="about-card">
-<h4>HELLO 👋</h4>
-<p>
-Saya merupakan mahasiswa tingkat akhir D4 Teknik Infrastruktur Sipil ITS...
+        <!-- 1 FOTO -->
+        <div class="about-img">
+            <img src="BackgorundHome.jpeg">
+        </div>
+
+        <!-- KANAN -->
+        <div class="about-content">
+           <div class="about-card">
+
+            <!-- 2 SAPAAN -->
+            <h4>HELLO 👋</h4>
+
+            <!-- 3 DESKRIPSI -->
+            <p>
+Saya merupakan mahasiswa tingkat akhir D4 Departemen Teknik Infrastruktur Sipil ITS dengan fokus pada bidang Teknologi Rekayasa Konstruksi Bangunan Air. 
+Saya memiliki pemahaman teknis dalam menganalisis data serta merancang solusi di bidang infrastruktur air. 
+Selain itu, saya mampu bekerja secara mandiri maupun dalam tim dengan komunikasi yang baik. 
+Dengan keterampilan dan semangat belajar yang tinggi, saya siap berkontribusi dalam mendukung kelancaran pekerjaan serta mencapai tujuan secara profesional.
 </p>
 
-<div class="slider">
-<button class="prev">❮</button>
-<div class="slider-track">
-<div class="slide active"><a href="#edu">Education</a></div>
-</div>
-<button class="next">❯</button>
-</div>
+            <!-- 4 SLIDER -->
+       <div class="slider">
 
+    <button class="prev">❮</button>
+
+    <div class="slider-track">
+        <div class="slide active"><a href="#edu">Education Level</a></div>
+        <div class="slide"><a href="#org">Organization Experience</a></div>
+        <div class="slide"><a href="#work">Work Experience</a></div>
+        <div class="slide"><a href="#skills">Skills</a></div>
+        <div class="slide"><a href="#achieve">Achievement & Other Experience</a></div>
+        <div class="slide"><a href="#contact">Contact Me</a></div>
+    </div>
+
+    <button class="next">❯</button>
+
+</div> <!-- slider -->
+
+</div> <!-- about-card -->
+
+</div> <!-- about-content -->
+
+</section> <!-- ABOUT SELESAI -->
+
+<!-- 🔥 TAMBAHKAN DI SINI -->
+<section id="edu">
+    <h1>Education Level</h1>
+
+    <div class="edu-container">
+
+        <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+            <h3>MI</h3>
+            <span>2009 - 2015</span>
+            <p>Pendidikan dasar.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📘</div>
+            <h3>MTs</h3>
+            <span>2015 - 2018</span>
+            <p>Pendidikan menengah pertama.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📗</div>
+            <h3>MA</h3>
+            <span>2018 - 2021</span>
+            <p>Jurusan (isi sesuai kamu).</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🏫</div>
+            <h3>ITS</h3>
+            <span>2022 - Sekarang</span>
+            <p>D4 TRK Bangunan Air.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="org">
+    <h1>Organizational Experience</h1>
+
+    <div class="edu-container">
+
+        <div class="edu-card">
+            <div class="edu-icon">💼</div>
+            <h3>EMM HMDS ITS</h3>
+            <span>Staff</span>
+            <p>Departemen ekonomi & kewirausahaan HMDS ITS.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🎉</div>
+            <h3>D’Village 13th</h3>
+            <span>Expert Staff Decoration</span>
+            <p>Event besar HMDS ITS (seminar, workshop, kompetisi, konser).</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🎨</div>
+            <h3>D’Village 12th</h3>
+            <span>Staff Dekorasi</span>
+            <p>Event nasional HMDS ITS.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📢</div>
+            <h3>IKAMANSA Expo</h3>
+            <span>Staff Dekorasi & Dokumentasi</span>
+            <p>Sosialisasi pendidikan tingkat lanjut.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🏫</div>
+            <h3>ITS Expo 2023</h3>
+            <span>Staff Dekorasi</span>
+            <p>Event branding inovasi mahasiswa ITS.</p>
+        </div>
+
+    </div>
+</section>
+   
+<section id="work">
+    <h1>Work Experience</h1>
+
+    <div class="edu-container">
+
+        <div class="edu-card">
+            <div class="edu-icon">🏗️</div>
+            <h3>Nippon Koei</h3>
+            <span>Internship (2025)</span>
+            <p>Konsultan internasional proyek Bali Beach Conservation (JICA).</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📊</div>
+            <h3>DKPU ITS</h3>
+            <span>Anggota (2024)</span>
+            <p>Survei harga material & alat berat Kediri dan Blitar.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🌾</div>
+            <h3>DKPU ITS</h3>
+            <span>Anggota (2025)</span>
+            <p>Tim survei & desain optimasi lahan non rawa (Pamekasan & Sumenep).</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🏢</div>
+            <h3>CV. Intishar Karya</h3>
+            <span>Internship</span>
+            <p>Pengawas lapangan rehabilitasi saluran irigasi Mojokerto.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📺</div>
+            <h3>Jack Advertising</h3>
+            <span>Team Produksi</span>
+            <p>Produksi & pemasaran media periklanan.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">🎉</div>
+            <h3>Bintang Decoration</h3>
+            <span>Team Lapangan</span>
+            <p>Event dekorasi wedding dan lainnya.</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon">📷</div>
+            <h3>Media Santri Ngasinan</h3>
+            <span>Crew</span>
+            <p>Media resmi pondok pesantren Al-Amien.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <h1>Skills</h1>
+   <div class="edu-card">
+    <div class="edu-icon">🛠️</div>
+    <h3>Technical Skills</h3>
+    <p>Analisis data, perencanaan konstruksi, survei lapangan, pengawasan proyek.</p>
 </div>
-</div>
+    <div class="edu-card">
+    <div class="edu-icon">💻</div>
+    <h3>Software</h3>
+    <p>AutoCAD, Excel, Word, PowerPoint, (tambahkan: HEC-RAS / MIKE / ArcGIS kalau ada).</p>
 </div>
 </section>
 
-<!-- TIMELINE -->
-<section id="edu" class="timeline-section">
-<h1 class="timeline-title">Education Journey</h1>
+<section id="achieve">
+    <h1>Achievements & Other Experience</h1>
 
-<div class="timeline">
-<div class="timeline-line"></div>
-<div class="timeline-progress" id="progress"></div>
+    <div class="achieve-container">
 
-<div class="timeline-item active">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<h3>MI</h3><span>2009-2015</span>
-</div>
-</div>
+        <div class="achieve-card">
+            <h3>🏆 Finalis</h3>
+            <p>Creative Students Skill 3rd Universitas Surabaya (2025)</p>
+        </div>
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<h3>MTs</h3><span>2015-2018</span>
-</div>
-</div>
+        <div class="achieve-card">
+            <h3>🥇 Juara 1</h3>
+            <p>Inovasi Mahasiswa Diesnat FT Universitas Gorontalo (2025)</p>
+        </div>
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<h3>MA</h3><span>2018-2021</span>
-</div>
-</div>
+        <div class="achieve-card">
+            <h3>🥉 Juara Harapan</h3>
+            <p>National Tender Competition Civil Carnival UMP (2025)</p>
+        </div>
 
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<h3>ITS</h3><span>2022-Sekarang</span>
-</div>
-</div>
+        <div class="achieve-card">
+            <h3>🤝 Volunteer</h3>
+            <p>Sosmas Enviro Celebration BEM Vokasi (2024)</p>
+        </div>
 
-</div>
+        <div class="achieve-card">
+            <h3>🌱 Pengabdian</h3>
+            <p>KKN-PM Pengairan Lahan Jember (2023)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🎓 Pelatihan</h3>
+            <p>Basic Media Schooling (2023)</p>
+        </div>
+
+    </div>
 </section>
 
-<script>
-const items=document.querySelectorAll(".timeline-item");
-const progress=document.getElementById("progress");
+<section id="contact">
+    <h1>Contact Me</h1>
 
-window.addEventListener("scroll",()=>{
-let section=document.querySelector(".timeline-section");
-let rect=section.getBoundingClientRect();
-let h=window.innerHeight;
+    <div class="edu-container">
 
-if(rect.top<h){
-let p=(h-rect.top)/(h+rect.height);
-p=Math.min(Math.max(p,0),1);
+        <div class="edu-card">
+            <div class="edu-icon">📧</div>
+            <h3>Email</h3>
+            <p>ivanovrafly03@gmail.com</p>
+        </div>
 
-progress.style.width=p*100+"%";
+        <div class="edu-card">
+            <div class="edu-icon">📱</div>
+            <h3>Phone</h3>
+            <p>+62 857 3049 5806</p>
+        </div>
 
-items.forEach((el,i)=>{
-if(p>i/items.length){
-el.classList.add("active");
-}
-});
-}
-});
-</script>
+        <div class="edu-card">
+            <div class="edu-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>
+                <a href="https://www.linkedin.com/in/ivanov-rafly-70040830a" target="_blank">
+                    View Profile
+                </a>
+            </p>
+        </div>
 
-</body>
-</html>
+        <div class="edu-card">
+            <div class="edu-icon">📍</div>
+            <h3>Location</h3>
+            <p>Surabaya, Indonesia</p>
+        </div>
+
+    </div>
+</section>
