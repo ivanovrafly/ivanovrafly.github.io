@@ -682,50 +682,49 @@ body {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    // =====================
+    // SLIDER
+    // =====================
     let index = 0;
 
     const slides = document.querySelectorAll(".slide");
     const next = document.querySelector(".next");
     const prev = document.querySelector(".prev");
 
-    console.log("slides:", slides.length);
-    console.log("next:", next);
-    console.log("prev:", prev);
-
     function showSlide(i) {
         slides.forEach(s => s.classList.remove("active"));
         slides[i].classList.add("active");
     }
 
-    next.onclick = function () {
-        index++;
-        if (index >= slides.length) index = 0;
-        showSlide(index);
-    };
+    if (next && prev && slides.length > 0) {
 
-    prev.onclick = function () {
-        index--;
-        if (index < 0) index = slides.length - 1;
-        showSlide(index);
-    };
-    
-    function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
+        next.addEventListener("click", function () {
+            index++;
+            if (index >= slides.length) index = 0;
+            showSlide(index);
+        });
 
-});
+        prev.addEventListener("click", function () {
+            index--;
+            if (index < 0) index = slides.length - 1;
+            showSlide(index);
+        });
 
-<script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-
-toggle.addEventListener("click", () => {
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
     }
+
+    // =====================
+    // MENU TOGGLE
+    // =====================
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+            menu.style.display =
+                menu.style.display === "block" ? "none" : "block";
+        });
+    }
+
 });
 </script>
 <body>
