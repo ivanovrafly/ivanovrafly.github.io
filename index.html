@@ -23,7 +23,7 @@ html {
 }
 
 /* ===================== */
-/* HERO */
+/* HERO (TIDAK DIUBAH) */
 /* ===================== */
 .hero {
     position: relative;
@@ -33,11 +33,9 @@ html {
     justify-content: space-between;
     padding: 80px;
     color: white;
-
-   background: url('bg_home.png') no-repeat center center/cover;
+    background: url('bg_home.png') no-repeat center center/cover;
 }
 
-/* overlay gelap */
 .hero::before {
     content: "";
     position: absolute;
@@ -45,7 +43,6 @@ html {
     background: rgba(0,0,0,0.6);
 }
 
-/* konten di atas */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -68,7 +65,6 @@ html {
     color: #ccc;
 }
 
-/* button */
 .hero-btn {
     margin-top: 30px;
     display: flex;
@@ -81,7 +77,6 @@ html {
     color: #00c896;
     text-decoration: none;
     border-radius: 6px;
-    transition: 0.3s;
 }
 
 .btn-outline:hover {
@@ -95,18 +90,10 @@ html {
     color: black;
     text-decoration: none;
     border-radius: 6px;
-    transition: 0.3s;
 }
 
 .btn-solid:hover {
     opacity: 0.8;
-}
-
-/* image */
-.hero-img img {
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* ===================== */
@@ -134,7 +121,6 @@ html {
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    overflow: hidden;
 }
 
 .menu a {
@@ -157,40 +143,60 @@ section {
 }
 
 /* ===================== */
-/* ABOUT */
+/* ABOUT FIX TOTAL */
 /* ===================== */
 .about {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-    background: #1e1e1e;
-    color: white;
+    padding: 100px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
 }
 
 .about-container {
     display: flex;
     align-items: center;
-    gap: 80px;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
     width: 100%;
 }
 
 .about-img img {
-    width: 320px;
-    border-radius: 10px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 
 .about-content {
-    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.about-card {
+    max-width: 520px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0,200,150,0.2);
+    box-shadow:
+        0 0 60px rgba(0,200,150,0.15),
+        inset 0 0 25px rgba(0,200,150,0.1);
+}
+
+/* TEXT */
+.about-card p {
+    text-align: justify;
+    line-height: 1.8;
+    color: #ccc;
 }
 
 /* ===================== */
 /* SLIDER */
 /* ===================== */
-/* ===================== */
-/* SLIDER FINAL (CLEAN) */
-/* ===================== */
-
 .slider {
     display: flex;
     align-items: center;
@@ -202,7 +208,6 @@ section {
     min-width: 220px;
 }
 
-/* slide */
 .slide {
     text-align: center;
     padding: 12px 20px;
@@ -226,24 +231,27 @@ section {
     width: 45px;
     height: 45px;
     border-radius: 12px;
-
     background: rgba(0,200,150,0.15);
     border: 1px solid rgba(0,200,150,0.3);
-
     color: white;
     cursor: pointer;
-
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
 }
 
-/* hover */
-.prev:hover, .next:hover {
-    background: #00c896;
-    box-shadow: 0 0 12px #00c896;
+/* LINK FIX */
+.slider-track .slide a,
+.slider-track .slide a:visited,
+.slider-track .slide a:active,
+.slider-track .slide a:link {
+    color: #00c896 !important;
+    text-decoration: none;
 }
+
+.slider-track .slide a:hover {
+    color: #00ffbb !important;
+}
+
 /* ===================== */
-/* CARD */
+/* CARD SECTION */
 /* ===================== */
 .edu-container {
     display: flex;
@@ -259,35 +267,6 @@ section {
     width: 220px;
     text-align: center;
     color: white;
-    transition: 0.3s;
-}
-
-.edu-card:hover {
-    transform: translateY(-8px);
-}
-
-/* ===================== */
-/* ACHIEVEMENT */
-/* ===================== */
-.achieve-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.achieve-card {
-    background: linear-gradient(135deg, #00c896, #007a5e);
-    padding: 20px;
-    border-radius: 15px;
-    width: 220px;
-    color: white;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.achieve-card:hover {
-    transform: translateY(-10px) scale(1.05);
 }
 
 /* ===================== */
@@ -300,211 +279,19 @@ section {
         text-align: center;
     }
 
-    .hero-img img {
-        margin-top: 20px;
-    }
-
     .about-container {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 40px 20px;
+    .about-card {
+        padding: 25px;
     }
 
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 36px;
-    }
-
-    .hero-content h2 {
-        font-size: 18px;
-    }
-
-    .hero-img {
-        margin-top: 30px;
-    }
-
-    .hero-img img {
-        width: 80%;
-        max-width: 250px;
-    }
-    .prev, .next {
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
-
-    background: rgba(0,200,150,0.15);
-    border: 1px solid rgba(0,200,150,0.3);
-
-    color: white;
-    cursor: pointer;
-
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    }
-
-    .prev:hover, .next:hover {
-    background: #00c896;
-    box-shadow: 0 0 12px #00c896;
-    }
-.slider-track {
-    position: relative;
-    min-width: 220px;
-}
-
-.slide {
-    text-align: center;
-    padding: 12px 25px;
-    border-radius: 12px;
-
-    background: rgba(0,200,150,0.08);
-    border: 1px solid rgba(0,200,150,0.2);
-
-    backdrop-filter: blur(10px);
-
-    opacity: 0;
-    position: absolute;
-    transform: translateY(10px);
-    transition: 0.5s ease;
-}
-    .slide a {
-    color: #00c896;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.slide a:hover {
-    color: #00ffbb;
-}
-.slide.active {
-    opacity: 1;
-    position: relative;
-    transform: translateY(0);
-
-    box-shadow: 0 0 20px rgba(0,200,150,0.15);
-}
-.prev:hover, .next:hover {
-    background: #00c896;
-    box-shadow: 0 0 12px #00c896;
-    transform: scale(1.1);
-}
-/* ========================= */
-/* FIX LINK + DESKRIPSI */
-/* ========================= */
-
-.slide a,
-.slide a:visited,
-.slide a:active,
-.slide a:link {
-    color: #00c896 !important;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.slide a:hover {
-    color: #00ffbb !important;
-}
-
-/* 📖 deskripsi rapi */
-.about-content p {
-    text-align: justify;
-    line-height: 1.8;
-    max-width: 500px;
-}
-
-@media (max-width: 768px) {
-    .about-content p {
+    .about-card p {
         text-align: center;
     }
 }
-
-/* hover */
-.slider-track .slide a:hover {
-    color: #00ffbb !important;
-}
-/* ========================= */
-/* FIX GLOBAL (WAJIB DI LUAR MEDIA) */
-/* ========================= */
-
-.slider-track .slide a,
-.slider-track .slide a:visited,
-.slider-track .slide a:active,
-.slider-track .slide a:link {
-    color: #00c896 !important;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.slider-track .slide a:hover {
-    color: #00ffbb !important;
-}
-
-/* deskripsi */
-.about-content p {
-    text-align: justify;
-    line-height: 1.8;
-    max-width: 500px;
-}
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-card {
-    width: 100%;
-    max-width: 550px;
-
-    padding: 40px;
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(25px);
-
-    border: 1px solid rgba(0, 200, 150, 0.2);
-
-    box-shadow: 
-        0 0 50px rgba(0, 200, 150, 0.15),
-        inset 0 0 25px rgba(0, 200, 150, 0.1);
-
-    transition: 0.3s;
-}
-
-/* glow saat hover */
-.about-card:hover {
-    box-shadow: 
-        0 0 80px rgba(0, 200, 150, 0.25),
-        inset 0 0 35px rgba(0, 200, 150, 0.15);
-}
-
-/* teks */
-.about-card h4 {
-    margin-bottom: 10px;
-}
-
-.about-card p {
-    text-align: justify;
-    line-height: 1.8;
-    color: #ccc;
-}
-
-/* slider spacing */
-.about-card .slider {
-    margin-top: 25px;
-}
-.about {
-    background: radial-gradient(circle at center, #0a0a0a, #000000);
-}
-    
 </style>
 </head>
 <script>
