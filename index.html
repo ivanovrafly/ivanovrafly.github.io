@@ -291,6 +291,76 @@ section {
     .about-card p {
         text-align: center;
     }
+    /* ===================== */
+/* TIMELINE FINAL */
+/* ===================== */
+
+.timeline-section {
+    padding: 120px 10%;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+}
+
+.timeline-title {
+    font-size: 42px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #222;
+    transform: translateY(-50%);
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg,#00c896,#00ffcc);
+    transform: translateY(-50%);
+    box-shadow: 0 0 20px #00c896;
+    transition: 0.5s;
+}
+
+.timeline-item {
+    width: 22%;
+    text-align: center;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    background: #555;
+    border-radius: 50%;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.timeline-item.active .timeline-dot {
+    background: #00c896;
+    box-shadow: 0 0 15px #00c896;
+}
+
+.timeline-content {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
 }
 </style>
 </head>
@@ -339,6 +409,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 menu.style.display === "block" ? "none" : "block";
         });
     }
+   <script>
+window.addEventListener("scroll", () => {
+    const items = document.querySelectorAll(".timeline-item");
+    const progress = document.getElementById("progress");
+
+    let section = document.querySelector(".timeline-section");
+    let rect = section.getBoundingClientRect();
+    let h = window.innerHeight;
+
+    if (rect.top < h) {
+        let p = (h - rect.top) / (h + rect.height);
+        p = Math.min(Math.max(p, 0), 1);
+
+        progress.style.width = p * 100 + "%";
+
+        items.forEach((el, i) => {
+            if (p > i / items.length) {
+                el.classList.add("active");
+            }
+        });
+    }
+});
+</script>
 
 });
 </script>
@@ -420,40 +513,48 @@ Dengan keterampilan dan semangat belajar yang tinggi, saya siap berkontribusi da
 </section> <!-- ABOUT SELESAI -->
 
 <!-- 🔥 TAMBAHKAN DI SINI -->
-<section id="edu">
-    <h1>Education Level</h1>
+<section id="edu" class="timeline-section">
 
-    <div class="edu-container">
+<h1 class="timeline-title">Education Journey</h1>
 
-        <div class="edu-card">
-            <div class="edu-icon">🎓</div>
-            <h3>MI</h3>
-            <span>2009 - 2015</span>
-            <p>Pendidikan dasar.</p>
-        </div>
+<div class="timeline">
 
-        <div class="edu-card">
-            <div class="edu-icon">📘</div>
-            <h3>MTs</h3>
-            <span>2015 - 2018</span>
-            <p>Pendidikan menengah pertama.</p>
-        </div>
+<div class="timeline-line"></div>
+<div class="timeline-progress" id="progress"></div>
 
-        <div class="edu-card">
-            <div class="edu-icon">📗</div>
-            <h3>MA</h3>
-            <span>2018 - 2021</span>
-            <p>Jurusan (isi sesuai kamu).</p>
-        </div>
+<div class="timeline-item active">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>MI</h3>
+<span>2009 - 2015</span>
+</div>
+</div>
 
-        <div class="edu-card">
-            <div class="edu-icon">🏫</div>
-            <h3>ITS</h3>
-            <span>2022 - Sekarang</span>
-            <p>D4 TRK Bangunan Air.</p>
-        </div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>MTs</h3>
+<span>2015 - 2018</span>
+</div>
+</div>
 
-    </div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>MA</h3>
+<span>2018 - 2021</span>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>ITS</h3>
+<span>2022 - Sekarang</span>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="org">
