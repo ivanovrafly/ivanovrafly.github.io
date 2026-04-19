@@ -309,8 +309,6 @@ section {
         text-align: center;
         gap: 30px;
     }
-    /* RESPONSIVE HERO */
-@media (max-width: 768px) {
 
     .hero {
         flex-direction: column;
@@ -428,8 +426,13 @@ section {
         text-align: center;
     }
 }
-    /* ========================= */
-/* FORCE LINK COLOR (FIX BANDEL) */
+
+/* hover */
+.slider-track .slide a:hover {
+    color: #00ffbb !important;
+}
+/* ========================= */
+/* FIX GLOBAL (WAJIB DI LUAR MEDIA) */
 /* ========================= */
 
 .slider-track .slide a,
@@ -437,12 +440,19 @@ section {
 .slider-track .slide a:active,
 .slider-track .slide a:link {
     color: #00c896 !important;
-    text-decoration: none !important;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-/* hover */
 .slider-track .slide a:hover {
     color: #00ffbb !important;
+}
+
+/* deskripsi */
+.about-content p {
+    text-align: justify;
+    line-height: 1.8;
+    max-width: 500px;
 }
 </style>
 </head>
