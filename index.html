@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Ivanov</title>
@@ -544,6 +545,123 @@ nav a:hover {
     background: #00c896;
     color: black;
 }
+    body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+    color: white;
+    position: relative;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* DROPDOWN */
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(0,200,150,0.2);
+    color: #00c896;
+}
+
+/* HERO TEXT */
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    color: #00c896;
+    margin-top: 10px;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    color: #ccc;
+}
+
+/* BUTTON */
+.hero-btn {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline {
+    padding: 12px 25px;
+    border: 2px solid #00c896;
+    color: #00c896;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #00c896;
+    color: black;
+}
+
+.btn-solid {
+    padding: 12px 25px;
+    background: #00c896;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-solid:hover {
+    opacity: 0.8;
+}
+
+/* IMAGE */
+.hero-img img {
+    width: 300px;
+    border-radius: 20px;
+    opacity: 0.9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 </style>
 </head>
 <script>
@@ -575,6 +693,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index < 0) index = slides.length - 1;
         showSlide(index);
     };
+    
+    function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
 
 });
 </script>
@@ -596,21 +719,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-overlay"></div>
 
-    <div class="hero-text">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="menu" id="menu">
+            <a href="#home">Home</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
         <h1>IVANOV RAFLY</h1>
         <h2>Water Infrastructure Engineering Student</h2>
+        <p>Building sustainable and resilient water systems.</p>
 
-        <p>
-            Passionate in coastal engineering, hydrodynamic modeling, 
-            and sustainable water infrastructure development.
-        </p>
-
-        <a href="#about">
-            <button class="btn">Explore More</button>
-        </a>
+        <div class="hero-btn">
+            <a href="#about" class="btn-outline">View My Profile</a>
+            <a href="#contact" class="btn-solid">Contact Me</a>
+        </div>
     </div>
+
+    <!-- FOTO PLACEHOLDER -->
+    <div class="hero-img">
+        <img src="https://via.placeholder.com/300x300?text=A" alt="profile">
+    </div>
+
 </section>
 
 <!-- ABOUT -->
