@@ -454,6 +454,57 @@ section {
     line-height: 1.8;
     max-width: 500px;
 }
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-card {
+    width: 100%;
+    max-width: 550px;
+
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(0, 200, 150, 0.2);
+
+    box-shadow: 
+        0 0 50px rgba(0, 200, 150, 0.15),
+        inset 0 0 25px rgba(0, 200, 150, 0.1);
+
+    transition: 0.3s;
+}
+
+/* glow saat hover */
+.about-card:hover {
+    box-shadow: 
+        0 0 80px rgba(0, 200, 150, 0.25),
+        inset 0 0 35px rgba(0, 200, 150, 0.15);
+}
+
+/* teks */
+.about-card h4 {
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    text-align: justify;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* slider spacing */
+.about-card .slider {
+    margin-top: 25px;
+}
+.about {
+    background: radial-gradient(circle at center, #0a0a0a, #000000);
+}
+    
 </style>
 </head>
 <script>
@@ -544,6 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <!-- KANAN -->
         <div class="about-content">
+           <div class="about-card">
 
             <!-- 2 SAPAAN -->
             <h4>HELLO 👋</h4>
@@ -572,11 +624,11 @@ Dengan keterampilan dan semangat belajar yang tinggi, saya siap berkontribusi da
 
     <button class="next">❯</button>
 
-</div>
+</div> <!-- slider -->
 
-        </div>
+</div> <!-- about-card -->
 
-    </div>
+</div> <!-- about-content -->
 
 </section> <!-- ABOUT SELESAI -->
 
