@@ -484,6 +484,66 @@ nav a:hover {
 .edu-card a:hover {
     text-decoration: underline;
 }
+.hero {
+    position: relative;
+    height: 100vh;
+
+    background: url('https://picsum.photos/1600/900?grayscale') no-repeat center center/cover;
+    /* 🔥 placeholder random image */
+
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    color: white;
+}
+
+/* overlay gelap */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+/* text di atas */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.hero-text h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    color: #00c896;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* button upgrade */
+.btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: 2px solid #00c896;
+    background: transparent;
+    color: #00c896;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00c896;
+    color: black;
+}
 </style>
 </head>
 <script>
@@ -536,16 +596,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- HERO -->
 <section class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-text">
-        <h1>Ivanov Rafly<br>Master of Engineering</h1>
+        <h1>IVANOV RAFLY</h1>
+        <h2>Water Infrastructure Engineering Student</h2>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Passionate in coastal engineering, hydrodynamic modeling, 
+            and sustainable water infrastructure development.
         </p>
 
         <a href="#about">
-            <button class="btn">About Me</button>
+            <button class="btn">Explore More</button>
         </a>
     </div>
 </section>
