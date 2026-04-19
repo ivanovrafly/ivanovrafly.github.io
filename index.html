@@ -441,6 +441,40 @@ nav a:hover {
     background: rgba(255, 165, 0, 0.1);
     border: 1px solid rgba(255, 165, 0, 0.2);
 }
+    .achieve-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.achieve-card {
+    background: linear-gradient(135deg, #00c896, #007a5e);
+    padding: 20px;
+    border-radius: 15px;
+    width: 220px;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.achieve-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.achieve-card h3 {
+    margin-bottom: 10px;
+}
+
+.achieve-card p {
+    font-size: 14px;
+}
+    
+.achieve-card {
+    box-shadow: 0 0 15px rgba(0,200,150,0.5);
+}
 </style>
 </head>
 <script>
@@ -695,8 +729,41 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 <section id="achieve">
-    <h1>Achievement & Other Experience</h1>
-    <p>Isi pencapaian kamu...</p>
+    <h1>Achievements & Other Experience</h1>
+
+    <div class="achieve-container">
+
+        <div class="achieve-card">
+            <h3>🏆 Finalis</h3>
+            <p>Creative Students Skill 3rd Universitas Surabaya (2025)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🥇 Juara 1</h3>
+            <p>Inovasi Mahasiswa Diesnat FT Universitas Gorontalo (2025)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🥉 Juara Harapan</h3>
+            <p>National Tender Competition Civil Carnival UMP (2025)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🤝 Volunteer</h3>
+            <p>Sosmas Enviro Celebration BEM Vokasi (2024)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🌱 Pengabdian</h3>
+            <p>KKN-PM Pengairan Lahan Jember (2023)</p>
+        </div>
+
+        <div class="achieve-card">
+            <h3>🎓 Pelatihan</h3>
+            <p>Basic Media Schooling (2023)</p>
+        </div>
+
+    </div>
 </section>
 
 <section id="contact">
