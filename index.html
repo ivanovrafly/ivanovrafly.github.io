@@ -208,13 +208,22 @@ body {
     padding: 80px;
     color: white;
 
-    background: url('BackgorundHome.jpeg') no-repeat center right/cover;
+    background: url('bg-home.png') no-repeat center center/cover;
 }
 
-/* OVERLAY GELAP */
-.hero {
-    position: relative; /* 🔥 WAJIB */
-}  
+/* overlay gelap */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* text tetap di atas */
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
 .hero::before {
     content: "";
     position: absolute;
